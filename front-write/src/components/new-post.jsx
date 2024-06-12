@@ -9,7 +9,7 @@ function NewPost() {
     const navigate = useNavigate();
 
     async function verifyToken() {
-        let response = await fetch('http://localhost:3000/posts/create', {
+        let response = await fetch('https://blog-api-production-7275.up.railway.app/posts/create', {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ function NewPost() {
     verifyToken();
 
     async function createHandler() {
-        await fetch('http://localhost:3000/posts/create', {
+        await fetch('https://blog-api-production-7275.up.railway.app/posts/create', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

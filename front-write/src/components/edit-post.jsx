@@ -11,7 +11,7 @@ function EditPost() {
     const { postid } = useParams();
 
     async function verifyToken() {
-        let response = await fetch(`http://localhost:3000/posts/${postid}/edit`, {
+        let response = await fetch(`https://blog-api-production-7275.up.railway.app/posts/${postid}/edit`, {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ function EditPost() {
     verifyToken();
 
     async function editHandler() {
-        await fetch(`http://localhost:3000/posts/${postid}/edit`, {
+        await fetch(`https://blog-api-production-7275.up.railway.app/posts/${postid}/edit`, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',

@@ -5,7 +5,7 @@ function Home({ setAccess }) {
     const [posts, setPosts] = useState([]);
 
     async function getPosts() {
-        let response = await fetch('http://localhost:3000/posts', {
+        let response = await fetch('https://blog-api-production-7275.up.railway.app/posts', {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ function Home({ setAccess }) {
     }
 
     async function deleteHandler(id) {
-        let response = await fetch(`http://localhost:3000/posts/${id}`, {
+        let response = await fetch(`https://blog-api-production-7275.up.railway.app/posts/${id}`, {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
@@ -30,7 +30,7 @@ function Home({ setAccess }) {
     }
 
     async function publishHandler(id) {
-        let response = await fetch(`http://localhost:3000/posts/${id}/publish`, {
+        let response = await fetch(`https://blog-api-production-7275.up.railway.app/posts/${id}/publish`, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
@@ -42,16 +42,6 @@ function Home({ setAccess }) {
         setPosts(data.posts);
     }
 
-    // async function editHandler(id) {
-    //     await fetch(`http://localhost:3000/posts/${id}/edit`, {
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json',
-    //             'Authorization': 'Bearer ' + localStorage.token
-    //         },
-    //     });
-    // }
-    
     useEffect(() => {
         getPosts();
     }, []);

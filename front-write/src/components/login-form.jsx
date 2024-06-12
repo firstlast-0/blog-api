@@ -6,7 +6,7 @@ function LoginForm( {msg, setMsg, setAccess} ) {
     const passRef = useRef(null);
 
     async function loginHandler() {
-        let response = await fetch('http://localhost:3000/', {
+        let response = await fetch('https://blog-api-production-7275.up.railway.app/', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

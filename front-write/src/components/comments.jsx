@@ -7,7 +7,7 @@ function Comments() {
     const { postid } = useParams();
 
     async function getPost() {
-        let response = await fetch(`http://localhost:3000/posts/${postid}/comments`, {
+        let response = await fetch(`https://blog-api-production-7275.up.railway.app/posts/${postid}/comments`, {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ function Comments() {
     }, []);
     
     async function deleteHandler(commentid) {
-        let response = await fetch(`http://localhost:3000/posts/${postid}/comments/${commentid}`, {
+        let response = await fetch(`https://blog-api-production-7275.up.railway.app/posts/${postid}/comments/${commentid}`, {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',

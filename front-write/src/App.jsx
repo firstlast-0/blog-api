@@ -6,15 +6,9 @@ import './App.css';
 function App() {
     const [msg, setMsg] = useState(' ');
     const [access, setAccess] = useState('');
-    // async function getdata() {
-    //     let x = await fetch('http://localhost:3000/posts');
-    //     x = await x.json();    
-    //     console.log(x);
-    // }
-    // getdata();
 
     async function verifyToken() {
-        let response = await fetch('http://localhost:3000/', {
+        let response = await fetch('https://blog-api-production-7275.up.railway.app/', {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
