@@ -5,7 +5,7 @@ function Home() {
     const [posts, setPosts] = useState([]);
 
     async function getPosts() {
-        let response = await fetch('http://localhost:3000/posts', {
+        let response = await fetch('https://blog-api-production-7275.up.railway.app/posts', {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',

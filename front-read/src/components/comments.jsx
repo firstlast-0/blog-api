@@ -9,7 +9,7 @@ function Comments() {
     const { postid } = useParams();
 
     async function getPost() {
-        let response = await fetch(`http://localhost:3000/posts/${postid}/comments`, {
+        let response = await fetch(`https://blog-api-production-7275.up.railway.app/posts/${postid}/comments`, {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ function Comments() {
     }, []);
     
     async function addHandler() {
-        let response = await fetch(`http://localhost:3000/posts/${postid}/comments/create`, {
+        let response = await fetch(`https://blog-api-production-7275.up.railway.app/posts/${postid}/comments/create`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
